@@ -5,6 +5,9 @@ ADDRES    START    100
 NOW      +LDB     #100              load base register 
 XXX       BASE    =C'ABCDEFGH'         base at operand
 YYY       LDA     =X'02'          A <- (m..m+2)    
+
+
+
 EN        RESW     4                  
 BE        WORD     2                              
           LTORG

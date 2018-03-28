@@ -22,8 +22,14 @@ public class AssemblerApp{
 		ass.labels.arr = new HashTableEntry[997];
 
 		while(sc.hasNext()){
-			ass.instructions[ass.index++] = new Instruction(sc.nextLine());
-			ass.getAddress(ass.instructions[ass.index-1]);
+			String tempstr = sc.nextLine();
+
+			System.out.println(tempstr);			
+
+			if(!tempstr.isEmpty()){
+				ass.instructions[ass.index++] = new Instruction(tempstr);
+				ass.getAddress(ass.instructions[ass.index-1]);
+			}
 		}
 
 		for( int i = 0; i<ass.index; i++){
