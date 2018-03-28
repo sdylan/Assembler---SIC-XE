@@ -12,35 +12,6 @@ public class Assembler{
 	public static int address, index = 0, mindex = 0;
 	
 
-	public static void main (String[] args) throws Exception{
-		Scanner sc = new Scanner(new File(args[0]));
-		Scanner msc = new Scanner(new File("mnemonics.txt"));
-
-		int rindex = 0;
-
-		while(msc.hasNext()){
-			String[] tempstr = msc.nextLine().split("[ \t]+");
-
-			if(tempstr.length==3)
-				mnemonics[mindex++] = new Mnemonic(tempstr);
-			if(tempstr.length==2)
-				registers[rindex++] = new Register(tempstr);	
-		}
-	
-		labels.arr = new HashTableEntry[997];
-
-		while(sc.hasNext()){
-			instructions[index++] = new Instruction(sc.nextLine());
-			getAddress(instructions[index-1]);
-		}
-
-		for( int i = 0; i<index; i++){
-//			getObjectCode(instructions[i]);
-		}
-		
-		printListing(index);
-		printHashTable();
-	}
 	
 	public static void printHashTable(){
 		
